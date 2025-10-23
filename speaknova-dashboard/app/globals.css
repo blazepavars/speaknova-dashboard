@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #09171a;
+  --text: #e9eff5;
+  --primary: #8888f2;
+  --pink: #F0CCEF;
+  --lime: #E1F274;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--text);
+  background:
+    radial-gradient(1200px 800px at -10% -10%, rgba(136,136,242,0.10), transparent 60%),
+    radial-gradient(1000px 600px at 110% -20%, rgba(240,204,239,0.08), transparent 60%),
+    radial-gradient(900px 700px at 50% 120%, rgba(225,242,116,0.06), transparent 50%),
+    linear-gradient(transparent 0, rgba(255,255,255,0.02) 1px),
+    linear-gradient(90deg, transparent 0, rgba(255,255,255,0.02) 1px),
+    var(--bg);
+  background-size: auto, auto, auto, 24px 24px, 24px 24px, auto;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+}
+
+.container {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+.card {
+  @apply bg-[#0d2126] rounded-lg border border-[#123239] shadow-sm transition-colors hover:border-primary/50;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-md px-4 py-2 font-medium transition-colors;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8888f2, #F0CCEF);
+  color: #0b0b12;
+  box-shadow: 0 0 0 0 rgba(136,136,242,0.0);
+  transition: box-shadow 150ms ease, filter 150ms ease, transform 120ms ease;
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 20px -8px rgba(136,136,242,0.6);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  @apply border border-[#2b3e44] text-[var(--text)];
+}
+
+.input {
+  @apply bg-[#0d2126] border border-[#123239] rounded-md px-3 py-2 text-[var(--text)] placeholder:text-[#6e7d82];
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs bg-[#0f2730] border border-[#1d3a43];
+}
+
+/* Header accent underline for active nav is applied via text-primary; add subtle border glow */
+header { box-shadow: 0 1px 0 0 #123239 inset; }
+
+.gradient-text {
+  background: linear-gradient(90deg, #e9eff5, #E1F274 30%, #8888f2 60%, #F0CCEF 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(9, 23, 26, 0.6);
+  backdrop-filter: blur(8px);
+}
